@@ -1,0 +1,538 @@
+{
+  "meta": {
+    "generated_at": "2026-09-27T12:52:19.566333Z",
+    "note": "Synthetic demo dataset for portfolio purposes. Not real company data.",
+    "date_range": {
+      "start": "2026-07-29",
+      "end": "2026-09-26"
+    }
+  },
+  "summary": {
+    "avg_on_time_pct": 92.4,
+    "avg_trailer_utilization_pct": 74.5,
+    "avg_inventory_accuracy_pct": 96.9,
+    "total_volume_last_7d": 10206,
+    "total_assets_tracked": 399
+  },
+  "daily": [
+    {
+      "date": "2026-07-29",
+      "inbound_volume": 863,
+      "outbound_volume": 728,
+      "on_time_pct": 94.9,
+      "trailer_utilization_pct": 81.5,
+      "inventory_accuracy_pct": 94.5
+    },
+    {
+      "date": "2026-07-30",
+      "inbound_volume": 798,
+      "outbound_volume": 792,
+      "on_time_pct": 91.5,
+      "trailer_utilization_pct": 73.9,
+      "inventory_accuracy_pct": 96.0
+    },
+    {
+      "date": "2026-07-31",
+      "inbound_volume": 902,
+      "outbound_volume": 831,
+      "on_time_pct": 92.7,
+      "trailer_utilization_pct": 83.0,
+      "inventory_accuracy_pct": 97.9
+    },
+    {
+      "date": "2026-08-01",
+      "inbound_volume": 439,
+      "outbound_volume": 457,
+      "on_time_pct": 89.4,
+      "trailer_utilization_pct": 81.0,
+      "inventory_accuracy_pct": 97.1
+    },
+    {
+      "date": "2026-08-02",
+      "inbound_volume": 473,
+      "outbound_volume": 408,
+      "on_time_pct": 96.4,
+      "trailer_utilization_pct": 72.8,
+      "inventory_accuracy_pct": 96.6
+    },
+    {
+      "date": "2026-08-03",
+      "inbound_volume": 867,
+      "outbound_volume": 836,
+      "on_time_pct": 93.7,
+      "trailer_utilization_pct": 77.3,
+      "inventory_accuracy_pct": 97.8
+    },
+    {
+      "date": "2026-08-04",
+      "inbound_volume": 985,
+      "outbound_volume": 795,
+      "on_time_pct": 90.9,
+      "trailer_utilization_pct": 67.5,
+      "inventory_accuracy_pct": 98.1
+    },
+    {
+      "date": "2026-08-05",
+      "inbound_volume": 946,
+      "outbound_volume": 816,
+      "on_time_pct": 89.8,
+      "trailer_utilization_pct": 67.4,
+      "inventory_accuracy_pct": 98.1
+    },
+    {
+      "date": "2026-08-06",
+      "inbound_volume": 935,
+      "outbound_volume": 854,
+      "on_time_pct": 90.4,
+      "trailer_utilization_pct": 75.9,
+      "inventory_accuracy_pct": 97.4
+    },
+    {
+      "date": "2026-08-07",
+      "inbound_volume": 917,
+      "outbound_volume": 876,
+      "on_time_pct": 93.2,
+      "trailer_utilization_pct": 79.4,
+      "inventory_accuracy_pct": 97.3
+    },
+    {
+      "date": "2026-08-08",
+      "inbound_volume": 515,
+      "outbound_volume": 492,
+      "on_time_pct": 87.8,
+      "trailer_utilization_pct": 71.4,
+      "inventory_accuracy_pct": 96.5
+    },
+    {
+      "date": "2026-08-09",
+      "inbound_volume": 476,
+      "outbound_volume": 450,
+      "on_time_pct": 97.3,
+      "trailer_utilization_pct": 67.1,
+      "inventory_accuracy_pct": 98.6
+    },
+    {
+      "date": "2026-08-10",
+      "inbound_volume": 849,
+      "outbound_volume": 832,
+      "on_time_pct": 93.0,
+      "trailer_utilization_pct": 78.7,
+      "inventory_accuracy_pct": 98.2
+    },
+    {
+      "date": "2026-08-11",
+      "inbound_volume": 965,
+      "outbound_volume": 836,
+      "on_time_pct": 91.0,
+      "trailer_utilization_pct": 80.9,
+      "inventory_accuracy_pct": 96.9
+    },
+    {
+      "date": "2026-08-12",
+      "inbound_volume": 877,
+      "outbound_volume": 801,
+      "on_time_pct": 89.6,
+      "trailer_utilization_pct": 78.0,
+      "inventory_accuracy_pct": 97.4
+    },
+    {
+      "date": "2026-08-13",
+      "inbound_volume": 971,
+      "outbound_volume": 841,
+      "on_time_pct": 93.0,
+      "trailer_utilization_pct": 79.0,
+      "inventory_accuracy_pct": 96.8
+    },
+    {
+      "date": "2026-08-14",
+      "inbound_volume": 965,
+      "outbound_volume": 833,
+      "on_time_pct": 91.3,
+      "trailer_utilization_pct": 70.9,
+      "inventory_accuracy_pct": 95.5
+    },
+    {
+      "date": "2026-08-15",
+      "inbound_volume": 543,
+      "outbound_volume": 455,
+      "on_time_pct": 92.5,
+      "trailer_utilization_pct": 77.8,
+      "inventory_accuracy_pct": 97.8
+    },
+    {
+      "date": "2026-08-16",
+      "inbound_volume": 554,
+      "outbound_volume": 476,
+      "on_time_pct": 91.1,
+      "trailer_utilization_pct": 73.4,
+      "inventory_accuracy_pct": 94.8
+    },
+    {
+      "date": "2026-08-17",
+      "inbound_volume": 891,
+      "outbound_volume": 811,
+      "on_time_pct": 89.3,
+      "trailer_utilization_pct": 77.2,
+      "inventory_accuracy_pct": 95.9
+    },
+    {
+      "date": "2026-08-18",
+      "inbound_volume": 943,
+      "outbound_volume": 946,
+      "on_time_pct": 91.4,
+      "trailer_utilization_pct": 79.9,
+      "inventory_accuracy_pct": 95.9
+    },
+    {
+      "date": "2026-08-19",
+      "inbound_volume": 954,
+      "outbound_volume": 836,
+      "on_time_pct": 91.4,
+      "trailer_utilization_pct": 80.7,
+      "inventory_accuracy_pct": 94.8
+    },
+    {
+      "date": "2026-08-20",
+      "inbound_volume": 986,
+      "outbound_volume": 898,
+      "on_time_pct": 90.6,
+      "trailer_utilization_pct": 62.4,
+      "inventory_accuracy_pct": 97.3
+    },
+    {
+      "date": "2026-08-21",
+      "inbound_volume": 945,
+      "outbound_volume": 900,
+      "on_time_pct": 92.6,
+      "trailer_utilization_pct": 86.8,
+      "inventory_accuracy_pct": 96.9
+    },
+    {
+      "date": "2026-08-22",
+      "inbound_volume": 488,
+      "outbound_volume": 499,
+      "on_time_pct": 93.2,
+      "trailer_utilization_pct": 84.9,
+      "inventory_accuracy_pct": 98.4
+    },
+    {
+      "date": "2026-08-23",
+      "inbound_volume": 551,
+      "outbound_volume": 564,
+      "on_time_pct": 88.7,
+      "trailer_utilization_pct": 68.9,
+      "inventory_accuracy_pct": 95.9
+    },
+    {
+      "date": "2026-08-24",
+      "inbound_volume": 957,
+      "outbound_volume": 825,
+      "on_time_pct": 94.5,
+      "trailer_utilization_pct": 72.2,
+      "inventory_accuracy_pct": 95.1
+    },
+    {
+      "date": "2026-08-25",
+      "inbound_volume": 930,
+      "outbound_volume": 911,
+      "on_time_pct": 95.2,
+      "trailer_utilization_pct": 90.0,
+      "inventory_accuracy_pct": 100.0
+    },
+    {
+      "date": "2026-08-26",
+      "inbound_volume": 995,
+      "outbound_volume": 846,
+      "on_time_pct": 85.7,
+      "trailer_utilization_pct": 76.1,
+      "inventory_accuracy_pct": 96.1
+    },
+    {
+      "date": "2026-08-27",
+      "inbound_volume": 958,
+      "outbound_volume": 866,
+      "on_time_pct": 92.0,
+      "trailer_utilization_pct": 82.5,
+      "inventory_accuracy_pct": 97.4
+    },
+    {
+      "date": "2026-08-28",
+      "inbound_volume": 970,
+      "outbound_volume": 845,
+      "on_time_pct": 87.1,
+      "trailer_utilization_pct": 70.1,
+      "inventory_accuracy_pct": 97.1
+    },
+    {
+      "date": "2026-08-29",
+      "inbound_volume": 617,
+      "outbound_volume": 499,
+      "on_time_pct": 95.6,
+      "trailer_utilization_pct": 70.0,
+      "inventory_accuracy_pct": 95.5
+    },
+    {
+      "date": "2026-08-30",
+      "inbound_volume": 493,
+      "outbound_volume": 456,
+      "on_time_pct": 99.3,
+      "trailer_utilization_pct": 67.4,
+      "inventory_accuracy_pct": 98.4
+    },
+    {
+      "date": "2026-08-31",
+      "inbound_volume": 935,
+      "outbound_volume": 942,
+      "on_time_pct": 93.7,
+      "trailer_utilization_pct": 72.7,
+      "inventory_accuracy_pct": 97.1
+    },
+    {
+      "date": "2026-09-01",
+      "inbound_volume": 945,
+      "outbound_volume": 916,
+      "on_time_pct": 91.0,
+      "trailer_utilization_pct": 64.2,
+      "inventory_accuracy_pct": 95.4
+    },
+    {
+      "date": "2026-09-02",
+      "inbound_volume": 980,
+      "outbound_volume": 971,
+      "on_time_pct": 93.0,
+      "trailer_utilization_pct": 73.1,
+      "inventory_accuracy_pct": 97.6
+    },
+    {
+      "date": "2026-09-03",
+      "inbound_volume": 1030,
+      "outbound_volume": 902,
+      "on_time_pct": 91.2,
+      "trailer_utilization_pct": 82.9,
+      "inventory_accuracy_pct": 97.8
+    },
+    {
+      "date": "2026-09-04",
+      "inbound_volume": 1038,
+      "outbound_volume": 898,
+      "on_time_pct": 88.6,
+      "trailer_utilization_pct": 63.1,
+      "inventory_accuracy_pct": 99.5
+    },
+    {
+      "date": "2026-09-05",
+      "inbound_volume": 609,
+      "outbound_volume": 478,
+      "on_time_pct": 91.3,
+      "trailer_utilization_pct": 85.7,
+      "inventory_accuracy_pct": 95.7
+    },
+    {
+      "date": "2026-09-06",
+      "inbound_volume": 489,
+      "outbound_volume": 518,
+      "on_time_pct": 91.2,
+      "trailer_utilization_pct": 74.0,
+      "inventory_accuracy_pct": 97.0
+    },
+    {
+      "date": "2026-09-07",
+      "inbound_volume": 975,
+      "outbound_volume": 951,
+      "on_time_pct": 92.8,
+      "trailer_utilization_pct": 79.2,
+      "inventory_accuracy_pct": 94.3
+    },
+    {
+      "date": "2026-09-08",
+      "inbound_volume": 954,
+      "outbound_volume": 835,
+      "on_time_pct": 88.6,
+      "trailer_utilization_pct": 67.0,
+      "inventory_accuracy_pct": 96.7
+    },
+    {
+      "date": "2026-09-09",
+      "inbound_volume": 994,
+      "outbound_volume": 808,
+      "on_time_pct": 92.6,
+      "trailer_utilization_pct": 70.1,
+      "inventory_accuracy_pct": 96.7
+    },
+    {
+      "date": "2026-09-10",
+      "inbound_volume": 994,
+      "outbound_volume": 897,
+      "on_time_pct": 96.8,
+      "trailer_utilization_pct": 72.8,
+      "inventory_accuracy_pct": 96.2
+    },
+    {
+      "date": "2026-09-11",
+      "inbound_volume": 934,
+      "outbound_volume": 879,
+      "on_time_pct": 93.1,
+      "trailer_utilization_pct": 65.3,
+      "inventory_accuracy_pct": 97.3
+    },
+    {
+      "date": "2026-09-12",
+      "inbound_volume": 527,
+      "outbound_volume": 600,
+      "on_time_pct": 98.5,
+      "trailer_utilization_pct": 67.2,
+      "inventory_accuracy_pct": 96.8
+    },
+    {
+      "date": "2026-09-13",
+      "inbound_volume": 448,
+      "outbound_volume": 442,
+      "on_time_pct": 93.5,
+      "trailer_utilization_pct": 83.6,
+      "inventory_accuracy_pct": 96.2
+    },
+    {
+      "date": "2026-09-14",
+      "inbound_volume": 900,
+      "outbound_volume": 746,
+      "on_time_pct": 92.0,
+      "trailer_utilization_pct": 65.5,
+      "inventory_accuracy_pct": 96.5
+    },
+    {
+      "date": "2026-09-15",
+      "inbound_volume": 885,
+      "outbound_volume": 844,
+      "on_time_pct": 86.9,
+      "trailer_utilization_pct": 62.3,
+      "inventory_accuracy_pct": 100.0
+    },
+    {
+      "date": "2026-09-16",
+      "inbound_volume": 861,
+      "outbound_volume": 788,
+      "on_time_pct": 98.4,
+      "trailer_utilization_pct": 97.2,
+      "inventory_accuracy_pct": 95.6
+    },
+    {
+      "date": "2026-09-17",
+      "inbound_volume": 897,
+      "outbound_volume": 855,
+      "on_time_pct": 98.0,
+      "trailer_utilization_pct": 66.1,
+      "inventory_accuracy_pct": 96.9
+    },
+    {
+      "date": "2026-09-18",
+      "inbound_volume": 942,
+      "outbound_volume": 854,
+      "on_time_pct": 91.3,
+      "trailer_utilization_pct": 72.9,
+      "inventory_accuracy_pct": 95.3
+    },
+    {
+      "date": "2026-09-19",
+      "inbound_volume": 485,
+      "outbound_volume": 441,
+      "on_time_pct": 93.2,
+      "trailer_utilization_pct": 69.6,
+      "inventory_accuracy_pct": 97.9
+    },
+    {
+      "date": "2026-09-20",
+      "inbound_volume": 538,
+      "outbound_volume": 459,
+      "on_time_pct": 93.6,
+      "trailer_utilization_pct": 74.4,
+      "inventory_accuracy_pct": 97.2
+    },
+    {
+      "date": "2026-09-21",
+      "inbound_volume": 856,
+      "outbound_volume": 831,
+      "on_time_pct": 92.2,
+      "trailer_utilization_pct": 90.7,
+      "inventory_accuracy_pct": 99.4
+    },
+    {
+      "date": "2026-09-22",
+      "inbound_volume": 900,
+      "outbound_volume": 772,
+      "on_time_pct": 88.9,
+      "trailer_utilization_pct": 83.5,
+      "inventory_accuracy_pct": 97.6
+    },
+    {
+      "date": "2026-09-23",
+      "inbound_volume": 898,
+      "outbound_volume": 717,
+      "on_time_pct": 95.5,
+      "trailer_utilization_pct": 77.6,
+      "inventory_accuracy_pct": 95.6
+    },
+    {
+      "date": "2026-09-24",
+      "inbound_volume": 848,
+      "outbound_volume": 811,
+      "on_time_pct": 92.7,
+      "trailer_utilization_pct": 71.7,
+      "inventory_accuracy_pct": 97.1
+    },
+    {
+      "date": "2026-09-25",
+      "inbound_volume": 851,
+      "outbound_volume": 799,
+      "on_time_pct": 97.2,
+      "trailer_utilization_pct": 53.5,
+      "inventory_accuracy_pct": 96.9
+    },
+    {
+      "date": "2026-09-26",
+      "inbound_volume": 479,
+      "outbound_volume": 447,
+      "on_time_pct": 91.3,
+      "trailer_utilization_pct": 59.9,
+      "inventory_accuracy_pct": 97.7
+    }
+  ],
+  "carriers": [
+    {
+      "carrier": "Day & Ross",
+      "on_time_pct": 96.1,
+      "shipments": 1980,
+      "avg_transit_days": 3.2
+    },
+    {
+      "carrier": "Canpar",
+      "on_time_pct": 95.8,
+      "shipments": 2560,
+      "avg_transit_days": 1.5
+    },
+    {
+      "carrier": "TForce",
+      "on_time_pct": 95.3,
+      "shipments": 3700,
+      "avg_transit_days": 1.8
+    },
+    {
+      "carrier": "Purolator",
+      "on_time_pct": 93.0,
+      "shipments": 4069,
+      "avg_transit_days": 2.6
+    },
+    {
+      "carrier": "FedEx",
+      "on_time_pct": 91.4,
+      "shipments": 3331,
+      "avg_transit_days": 2.0
+    }
+  ],
+  "trailer_status": {
+    "In Transit": 171,
+    "At Dock (Loading)": 68,
+    "At Dock (Unloading)": 53,
+    "Staged / Ready": 85,
+    "Idle / Empty": 22
+  }
+}

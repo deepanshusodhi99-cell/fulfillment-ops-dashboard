@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fulfillment &amp; Transportation Operations Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg: #12161b;
+    --panel: #1a2128;
+    --panel-border: #262f38;
+    --text: #e7eaee;
+    --muted: #7d8894;
+    --amber: #f2a93b;
+    --blue: #3fa7d6;
+    --green: #4cae7f;
+    --red: #e2604f;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Barlow Condensed', sans-serif;
+    padding: 28px 32px 60px;
+    min-height:100%;
+  }
+  .num{ font-family:'IBM Plex Mono', monospace; }
+
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:12px;
+    border-bottom: 1px solid var(--panel-border);
+    padding-bottom: 18px;
+    margin-bottom: 26px;
+  }
+  header h1{
+    font-size: 30px;
+    font-weight:700;
+    letter-spacing:0.3px;
+    margin:0 0 4px;
+    color:#fff;
+  }
+  header p.sub{
+    margin:0;
+    color: var(--muted);
+    font-size:16px;
+  }
+  .meta-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color: var(--muted);
+    background: var(--panel);
+    border:1px solid var(--panel-border);
+    border-radius: 3px;
+    padding: 6px 10px;
+    line-height:1.5;
+  }
+  .meta-tag b{ color: var(--amber); }
+
+  .kpi-row{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:16px;
+    margin-bottom: 22px;
+  }
+  .kpi{
+    background: var(--panel);
+    border:1px solid var(--panel-border);
+    border-left: 3px solid var(--amber);
+    border-radius: 4px;
+    padding: 16px 18px;
+  }
+  .kpi:nth-child(2){ border-left-color: var(--blue); }
+  .kpi:nth-child(3){ border-left-color: var(--green); }
+  .kpi:nth-child(4){ border-left-color: #b47ee0; }
+  .kpi .label{
+    font-size:13px;
+    text-transform: uppercase;
+    letter-spacing:0.06em;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .kpi .value{
+    font-size: 32px;
+    font-weight:600;
+  }
+  .kpi .value span{ font-size:16px; color:var(--muted); margin-left:2px;}
+
+  .grid{
+    display:grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap:16px;
+  }
+  .panel{
+    background: var(--panel);
+    border:1px solid var(--panel-border);
+    border-radius: 4px;
+    padding: 18px 20px;
+  }
+  .panel h2{
+    font-size:15px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color: var(--muted);
+    margin: 0 0 14px;
+    font-weight:600;
+  }
+  .row-2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:16px;
+    margin-top:16px;
+  }
+  canvas{ max-height: 280px; }
+
+  .carrier-table{ width:100%; border-collapse: collapse; font-size:14px;}
+  .carrier-table th{
+    text-align:left;
+    font-size:11.5px;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:600;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--panel-border);
+  }
+  .carrier-table td{
+    padding: 9px 0;
+    border-bottom:1px solid #202832;
+  }
+  .carrier-table td.num{ font-size:14px; }
+  .bar-bg{ background:#232c35; border-radius:3px; height:6px; margin-top:5px; overflow:hidden;}
+  .bar-fill{ background: var(--amber); height:100%; border-radius:3px;}
+
+  footer{
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 12.5px;
+    border-top:1px solid var(--panel-border);
+    padding-top:14px;
+  }
+
+  @media (max-width: 900px){
+    .kpi-row{ grid-template-columns: repeat(2,1fr); }
+    .grid{ grid-template-columns: 1fr; }
+    .row-2{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Fulfillment &amp; Transportation Operations</h1>
+    <p class="sub">Distribution network KPI overview — last 60 days</p>
+  </div>
+  <div class="meta-tag">
+    <b>DEMO DATA</b> — synthetically generated for portfolio purposes.<br>
+    Not sourced from any employer's systems.
+  </div>
+</header>
+
+<div class="kpi-row" id="kpiRow"></div>
+
+<div class="grid">
+  <div class="panel">
+    <h2>Inbound / Outbound Volume — Daily</h2>
+    <canvas id="volumeChart"></canvas>
+  </div>
+  <div class="panel">
+    <h2>Trailer Status — Live Snapshot</h2>
+    <canvas id="trailerChart"></canvas>
+  </div>
+</div>
+
+<div class="row-2">
+  <div class="panel">
+    <h2>On-Time % &amp; Trailer Utilization — Trend</h2>
+    <canvas id="trendChart"></canvas>
+  </div>
+  <div class="panel">
+    <h2>Carrier Performance</h2>
+    <table class="carrier-table">
+      <thead>
+        <tr><th>Carrier</th><th>On-Time %</th><th class="num">Shipments</th><th class="num">Avg Transit</th></tr>
+      </thead>
+      <tbody id="carrierBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<footer>
+  Built with Python (pandas/numpy) for data generation and Chart.js for visualization · <span class="num">github.com/&lt;your-username&gt;/fulfillment-ops-dashboard</span>
+</footer>
+
+<script>
+const CHART_COLORS = {
+  amber: '#f2a93b', blue: '#3fa7d6', green: '#4cae7f', red: '#e2604f',
+  purple: '#b47ee0', muted: '#7d8894', grid: '#232c35'
+};
+Chart.defaults.color = '#9aa5b1';
+Chart.defaults.font.family = "'IBM Plex Mono', monospace";
+Chart.defaults.font.size = 11;
+
+async function loadData(){
+  const res = await fetch('data.json');
+  return res.json();
+}
+
+function fmtDate(d){
+  const dt = new Date(d + 'T00:00:00');
+  return dt.toLocaleDateString('en-US', { month:'short', day:'numeric' });
+}
+
+function renderKPIs(summary){
+  const items = [
+    { label: 'Avg On-Time Delivery', value: summary.avg_on_time_pct, unit: '%' },
+    { label: 'Avg Trailer Utilization', value: summary.avg_trailer_utilization_pct, unit: '%' },
+    { label: 'Avg Inventory Accuracy', value: summary.avg_inventory_accuracy_pct, unit: '%' },
+    { label: 'Volume — Last 7 Days', value: summary.total_volume_last_7d.toLocaleString(), unit: 'units' },
+  ];
+  document.getElementById('kpiRow').innerHTML = items.map(i => `
+    <div class="kpi">
+      <div class="label">${i.label}</div>
+      <div class="value num">${i.value}<span>${i.unit}</span></div>
+    </div>
+  `).join('');
+}
+
+function renderVolumeChart(daily){
+  new Chart(document.getElementById('volumeChart'), {
+    type: 'bar',
+    data: {
+      labels: daily.map(d => fmtDate(d.date)).slice(-21),
+      datasets: [
+        { label: 'Inbound', data: daily.map(d=>d.inbound_volume).slice(-21), backgroundColor: CHART_COLORS.blue },
+        { label: 'Outbound', data: daily.map(d=>d.outbound_volume).slice(-21), backgroundColor: CHART_COLORS.amber },
+      ]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      scales: {
+        x: { grid: { color: CHART_COLORS.grid } },
+        y: { grid: { color: CHART_COLORS.grid }, beginAtZero:true }
+      },
+      plugins: { legend: { labels: { color:'#9aa5b1' } } }
+    }
+  });
+}
+
+function renderTrendChart(daily){
+  new Chart(document.getElementById('trendChart'), {
+    type: 'line',
+    data: {
+      labels: daily.map(d => fmtDate(d.date)),
+      datasets: [
+        { label:'On-Time %', data: daily.map(d=>d.on_time_pct), borderColor: CHART_COLORS.green, backgroundColor:'transparent', tension:0.25, pointRadius:0, borderWidth:2 },
+        { label:'Trailer Utilization %', data: daily.map(d=>d.trailer_utilization_pct), borderColor: CHART_COLORS.purple, backgroundColor:'transparent', tension:0.25, pointRadius:0, borderWidth:2 },
+      ]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      scales: {
+        x: { grid: { color: CHART_COLORS.grid }, ticks:{ maxTicksLimit:8 } },
+        y: { grid: { color: CHART_COLORS.grid }, suggestedMin:60, suggestedMax:100 }
+      },
+      plugins: { legend: { labels: { color:'#9aa5b1' } } }
+    }
+  });
+}
+
+function renderTrailerChart(status){
+  const labels = Object.keys(status);
+  const values = Object.values(status);
+  new Chart(document.getElementById('trailerChart'), {
+    type: 'doughnut',
+    data: {
+      labels,
+      datasets: [{ data: values, backgroundColor: [CHART_COLORS.blue, CHART_COLORS.amber, CHART_COLORS.purple, CHART_COLORS.green, CHART_COLORS.red] }]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      plugins: { legend: { position:'bottom', labels:{ color:'#9aa5b1', boxWidth:12, font:{size:10.5} } } }
+    }
+  });
+}
+
+function renderCarrierTable(carriers){
+  const maxShipments = Math.max(...carriers.map(c=>c.shipments));
+  document.getElementById('carrierBody').innerHTML = carriers.map(c => `
+    <tr>
+      <td>${c.carrier}</td>
+      <td class="num">${c.on_time_pct}%
+        <div class="bar-bg"><div class="bar-fill" style="width:${c.on_time_pct}%"></div></div>
+      </td>
+      <td class="num">${c.shipments.toLocaleString()}</td>
+      <td class="num">${c.avg_transit_days}d</td>
+    </tr>
+  `).join('');
+}
+
+loadData().then(data => {
+  renderKPIs(data.summary);
+  renderVolumeChart(data.daily);
+  renderTrendChart(data.daily);
+  renderTrailerChart(data.trailer_status);
+  renderCarrierTable(data.carriers);
+}).catch(err => {
+  document.body.innerHTML = '<p style="color:#e2604f;padding:40px;font-family:monospace;">Could not load data.json — make sure it is in the same folder as index.html and you are viewing this via a local server or GitHub Pages (not a file:// URL, which some browsers block for fetch).</p>';
+  console.error(err);
+});
+</script>
+
+</body>
+</html>
