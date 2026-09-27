@@ -14,7 +14,7 @@ design, data pipeline, and visualization skills for portfolio purposes.
 
 Enable GitHub Pages on this repo (Settings → Pages → deploy from `main`) and
 the dashboard will be live at:
-`https://<your-username>.github.io/fulfillment-ops-dashboard/`
+`https://github.com/deepanshusodhi99-cell.github.io/fulfillment-ops-dashboard/`
 
 ## Why this project
 
