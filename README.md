@@ -18,7 +18,7 @@ the dashboard will be live at:
 
 ## Why this project
 
-I build automated reporting and KPI dashboards for Walmart Canada's
+I build automated reporting and KPI dashboards for Canada's
 distribution network using Excel VBA, Power Query, and Tableau — but that
 data is proprietary and can't be shared publicly. This project rebuilds the
 same category of dashboard (carrier performance, trailer/asset visibility,
